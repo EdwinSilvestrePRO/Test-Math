@@ -200,11 +200,11 @@ class PerfilManager extends TestMath {
 				$formForAccess.onsubmit = function (evArg) {
 					evArg.preventDefault();
 					// if ( !(this. >= 4 && password.value.length <= 80) )
-					if (this.password.value.length <= 4) {
+					if (this.password.value.length < 3) {
 						$message.textContent = "Demaciada corta para enviar, ¡escríbe la correcta!";
 						$message.classList.remove("notVisible");
 					}
-					else if (this.password.value.length >= 80) {
+					else if (this.password.value.length >= 81) {
 						$message.textContent = "Demaciada larga para enviar, ¡escríbe la correcta!";
 						$message.classList.remove("notVisible");
 					}
