@@ -1,0 +1,203 @@
+form {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 5;
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+	width: 96vw;
+}
+form fieldset {
+	background-color: transparent;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+	width: 95vw;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+form fieldset legend {
+	text-align: left;
+	vertical-align: sub;
+	padding: 5px;
+	margin: 0px;
+	font-size: 30px;
+}
+form fieldset label {
+	font-size: 25px;
+	margin: 5px;
+	padding: 0px;
+}
+form fieldset input:not(input[type='checkbox'], input[type='password']) {
+	display: block;
+	min-width: 200px;
+	max-width: 400px;
+	width: 80%;
+	font-size: 25px;
+	margin: 5px;
+	pading: 0px;
+}
+form fieldset div.box-password {
+	width: 85%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+form fieldset div.box-password input[type="password"] {
+	display: block;
+	min-width: 200px;
+	max-width: 400px;
+	width: 75%;
+	flex-basis: auto;
+	font-size: 25px;
+	flex-shrink: 1;
+}
+form fieldset div.box-password button.view,
+form fieldset div.box-password button.hide {
+	margin: 0px 0px 0px 4px;
+	font-size: 16px;
+	background-color: purple;
+	color: white;
+	cursor: pointer;
+	transition: 300ms all ease;
+}
+form fieldset div.box-password button.view:hover,
+form fieldset div.box-password button.hide:hover {
+	background-color: white;
+	color: black;
+}
+form fieldset input[type='text'],
+form fieldset div.box-password input[type='password'] {
+	background-color: white;
+}
+form fieldset input[type='checkbox'] {
+	width: 30px;
+	height: 30px;
+	pading: 0px;
+
+}
+form fieldset input[type='submit']  {
+	background-color: white;
+	color: black;
+	border-radius: 1em;
+	paddnig: 10px;
+	cursor: pointer;
+	transition: 300ms background-color ease;
+}
+form fieldset input[type='button'] {
+	background-color: blue;
+	color: white;
+	border-radius: 1em;
+	paddnig: 10px;
+	cursor: pointer;
+	transition: 300ms background-color ease;
+}
+form fieldset input[type='submit']:hover {
+	background-color: yellow;
+}
+form fieldset input[type='button']:hover {
+	background-color: green;
+}
+form fieldset div#dialog.not-visible {
+	display: none;
+}
+form fieldset div#dialog {
+	background-color: #444;
+	width: 94vw;
+	color: cyan;
+	font-size: 28px;
+	padding: 5px;
+	font-family: serif;
+	word-wrap: break-word;
+	margin: 0px;
+}
+form fieldset div#dialog button {
+	display: block;
+	border-radius: 1em;
+	width: 40px;
+	height: 50px;
+	font-size: 26px;
+	background-color: black;
+	color: red;
+	content: 'x';
+	font-family: serif;
+	text-align: center;
+	cursor: pointer;
+	transition: 400ms all linear;
+}
+form fieldset div#dialog button:hover {
+	background-color: red;
+	color: white;
+}
+
+section.welcome-actual {
+	background-color: purple;
+	z-index: 5;
+	position: absolute;
+	width: 84vw;
+	top: 4px;
+	left: 8vw;
+	padding: 0px;
+	margin: 0px;
+	display: grid;
+	grid-template-rows: 40px 1fr;
+	grid-template-columns: auto;
+	grid-auto-flow: row dense;
+	column-gap: 0px;
+	row-gap: 0px;
+	transition: 400ms left ease;
+}
+section.welcome-actual.back {
+	left: -84vw;
+}
+section.welcome-actual div.content-button button {
+	width: 40px;
+	padding: 0px;
+	margin: 0px;
+	background-color: black;
+	color: red;
+	font-size: 28px;
+	cursor: pointer;
+	transition: 450ms all linear;
+}
+section.welcome-actual div.content-button button:hover {
+	background-color: red;
+	color: white;
+}
+section.welcome-actual div.content-button {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+	justify-content: flex-end;
+}
+
+section.welcome-actual div.firtDialog {
+	margin: 0px;
+	padding: 2px;
+}
+section.welcome-actual div.firtDialog h3 {
+	text-align: center;
+	font-size: 25px;
+	color: cyan;
+}
+section.welcome-actual div.firtDialog p {
+	color: yellow;
+	font-size: 20px;
+}
+section.welcome-actual div.firtDialog p i {
+	color: white;
+	text-shadow: 2px 2px 4px black;
+	font-weight: bolder;
+}
+section.welcome-actual div.firtDialog p strong {
+	color: white;
+}
+section.welcome-actual div.firtDialog p a {
+	cursor: pointer;
+	color: orange;
+}

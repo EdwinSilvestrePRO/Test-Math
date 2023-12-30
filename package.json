@@ -1,0 +1,15 @@
+{
+  "name": "test-math-223",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "testMathServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Codevelp",
+  "license": "ISC",
+  "dependencies": {
+    "anully": "^1.0.1"
+  }
+}

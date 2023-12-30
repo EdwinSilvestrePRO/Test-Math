@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="title" content="perfil-user" >
+		<meta name="description" content="for perfil" >
+		<meta name="copyright" content="Codevelp" >
+		<meta name="company" content="Codevelp" >
+		<meta name="configuration" content="null" >
+		<meta name="culture" content="$html$-lang" >
+		<meta name="product" content="web-page" >
+		<meta name="trademark" content="*.?*" >
+		<meta name="version" content="1.0.0" >
+		<!-- y mas -->
+		<meta charset="utf-8" >
+		<title>Perfil</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
+		<link rel="icon" href="favicon.png" >
+		<link rel="stylesheet" href="/perfil/perfilStyles.css" >
+	</head>
+	<body>
+		<header>
+			<h1>Perfil Actual</h1>
+		</header>
+
+		<main class="container hide">
+			<article>
+				<h2>Datos personales:</h2>
+				<p>Nombre de usuario: <i id="student">[Student]</i></p>
+				<p>Contraseña: <i>***...</i></p>
+				<p>Fecha de registro: <i id="dateOfRegistry">Sábado, 3 de Noviembre del año 2023 a las 4:56:00 Pm</i></p>
+				<div class="c-button">
+					<button id="edit">Editar</button>
+					<button id="close-session">Cerrar Sesión</button>
+					<button class="del-account" id="delete-account">Eliminar Cuenta</button>
+				</div>
+			</article>
+			<article id="points"></article>
+			<article>
+				<h2>Envía un mensage a los desarroladores</h2>
+				<p>
+					<strong>Codevelp</strong> es la principal agencia que
+					desarrolla y mantiene a <strong>Test Math</strong>, puedes
+					enviar un mensage para notificar fallas o errores.
+				</p>
+				<form action="./Notification" method="post" class="c-message">
+					<fieldset>
+						<legend>Escribe un mensaje:</legend>
+						<div name="dialog" class="text-dialog notVisible"></div>
+						<textarea id="message" name="message" class="" placeholder="Mensage para Codevelp"></textarea>
+						<button type="submit">Enviar</button>
+					</fieldset>
+				</form>
+			</article>
+		</main>
+
+		<footer>
+			<p>© Codevelp - - - 2023</p>
+		</footer>
+
+		<template id="@queries">
+			<div class="c-query toLeft">
+				<p id="query"></p>
+				<div class="b-forActions">
+					<button type="button" id="confirm-close">Si</button>
+					<button type="button" id="omit">No</button>
+				</div>
+			</div>
+		</template>
+
+		<template id="@access">
+			<form id="access" action="/perfil/accessToAcction" class="c-interfaceForAccess hide">
+					<fieldset>
+						<legend id="info">Contraseña de acceso requerido usuario <i id="n-userVisible"></i>:</legend>
+						<div class="ms notVisible" id="message"></div>
+						<div class="box-password">
+						<input type="password" placeholder='para acceder' id='pass' name="password" autocomplete="on" required><button type="button" class="view">mostrar</button>
+						</div>
+
+						<div class="buttons">
+							<button type="submit">Aceder</button>
+							<button type="button" id="cancell-access">Cancelar</button>
+						</div>
+					</fieldset>
+			</form>
+		</template>
+
+		<template id="@editData">
+			<form class="edit-data toLeft" action="/perfil/editNow" id="editDataToUser" method="post">
+				<fieldset>
+					<legend>Configuración de datos de usuario:</legend>
+					<div id="dialog2" class="hide"></div>
+					<label for="name">Nombre:</label>
+					<input type="text" autocomplete="on" id="name" name="name" placeholder="tu nombre">
+
+					<label for="pass">Contraseña: </label>
+					<div class="box-password">
+						<input type="password" placeholder='para acceder' id='pass' name="password" autocomplete="on" required>
+						<button type="button" class="view">mostrar</button>
+					</div>
+					<div class="buttons">
+						<button type="submit">Guardar</button>
+						<button type="button" id="close-setting">Cerrar</button>
+					</div>
+				</fieldset>	
+			</form>
+		</template>
+
+
+		
+		<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="return-home" class="home-destination">
+			<path d="m 50 1 l 50 49 l 0 50 l -99 0 l 0 -50z" stroke-width="2" stroke="white" fill="gray"></path>
+			<rect width="24" height="40" x="38" y="54" stroke-width="2" stroke="black"></rect>
+		</svg>
+		<script src="/perfil/manager.js" type="module"></script>
+	</body>
+</html>

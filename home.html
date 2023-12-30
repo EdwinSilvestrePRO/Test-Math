@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="title" content="test-math" >
+		<meta name="description" content="for tests math" >
+		<meta name="copyright" content="Codevelp" >
+		<meta name="company" content="Codevelp" >
+		<meta name="configuration" content="null" >
+		<meta name="culture" content="$html$-lang" >
+		<meta name="product" content="web-page" >
+		<meta name="trademark" content="*.?*" >
+		<meta name="version" content="1.0.0" >
+		<!-- y mas -->
+		<meta charset="utf-8" >
+		<title>Test Math</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
+		<link rel="icon" href="favicon.png" >
+		<link rel="stylesheet" href="stetic.css" >
+	</head>
+	<body>
+		
+		<main class='hidden' id="interface-v">
+			<header>
+				<h1>Hola <a href="/perfil" id="nameVisible">[student]</a>, ¿Desea comenzar una prueba?</h1>
+			</header>
+
+			<article>
+			<h2>Aritmética: <i class='' id="porcentArithmetic">0%</i> de calificación actual.</h2>
+			
+			<div class='buttons' id="tests-ivocators">
+				<button disabled id="adition">Suma</button>
+				<button disabled id='sustraction'>Resta</button>
+				<button disabled id='multiplication'>Multiplicación</button>
+				<button disabled id='division'>division</button>
+				<button disabled id='arithmetic-operations' class="special">Oper. Combinanas</button>
+			</div>
+
+			</article>
+		</main>
+
+		<template id="@forms">
+			<form name="loginer" id="loginer" action='/login'>
+				<fieldset>
+					<legend>Iniciar:</legend>
+
+					<div id="dialog" class="not-visible">
+						<button id="close-dialog" type='button'>x</button>dialogs
+					</div>
+
+					<label for='nameStudent'>Nombre:</label>
+					<br>
+					<input type='text' autocomplete="off" placeholder='tu nombre' id='nameStudent' name='name' required>
+					<br>
+					<label for='pass'>Contraseña: </label>
+					<br>
+					<div class="box-password">
+						<input type="password" placeholder='para asegurar' id='pass' name="password" autocomplete="on" required><button type="button" class="view">mostrar</button>
+					</div>
+					<br>
+					<input type='submit' value='Iniciar'> <input type='button' id='btregistry' value='Crear registro'>
+				</fieldset>
+			</form>
+
+			<form name="registrator" id="registrator" action='/registry' method="post">
+				<fieldset>
+					<legend>Regístrate:</legend>
+					
+					<div id="dialog" class="not-visible">
+						<button id="close-dialog" type='button'>x</button>Dialogs</div>
+
+
+					<label for='nameStudent'>Nombre:</label>
+					<br>
+					<input autocomplete="off" type='text' placeholder='tu nombre' id='nameStudent' name='name' required>
+					<br>
+					<label for='pass'>Contraseña: </label>
+					<br>
+					<div class="box-password">
+						<input type="password" placeholder='para asegurar' id='pass' name="password" autocomplete="on" required><button type="button" class="view">mostrar</button>
+					</div>
+					<br>
+
+					<label for='term'><input type='checkbox' id='term' name='conditions' id='conditions'> Yo acepto los <a href='/terminos-condiciones.pdf' required>Terminos y condisiones</a></label>
+					<br>
+					<input type='submit' value='Registrarme'>
+					<input type='button' id='btstart' value='Iniciar con cuenta'>
+				</fieldset>
+			</form>
+		</template>
+
+		<template id="@welcomeToUser">
+			<section class="welcome-actual back">
+				<div class="content-button">
+					<button type="button" id="close-wel">x</button>
+				</div>
+				<div class="firtDialog">
+					<h3>¡Registro logrado!</h3>
+					<p>
+						¡Bienvenido o bienvenida <i id="registred-now">[Student]</i> a <strong>Test Math</strong>!
+						Una plataforma para poner a prueba tu inteligencia <strong>Matemática</strong>.
+						Como te has registrado ahora aceptaste los <a href="/terminos-condiciones.pdf">Términos y condiciones</a> de uso de esta plataforma.<br><br>
+						Ten en cuenta de que tu session es temporal y solo durará una semana, por
+						lo que cuando se expire tendrás que volver a iniciar sesión, no
+						te preocupes, los datos de tus progresos quedan almacenados.
+					</p>
+				</div>
+			</section>
+		</template>
+
+		<template id="@typeInterfaceForTest">
+
+			<div class="i-epr opacy" data-main="true">
+				<p class="in-e"></p>
+				<p class="in-p"></p>	
+				<div class="in-r">
+					<input type="number" id="resp" placeholder="?"><label for="resp">pesos</label>
+				</div>
+				<p id="viewWarn" class="error hide">No has escrito algo, ¡Escribe una respuesta!</p>
+			</div>
+
+			<div class="i-cr opacy" data-main="true">
+				<p class="in-e"></p>
+				<p class="in-exp"></p>
+				<div class="in-r">
+					<label for="resp"></label>
+					<input type="number" id="resp" placeholder="?">
+				</div>
+				<p id="viewWarn" class="error hide">No has escrito algo, ¡Escribe una respuesta!</p>
+			</div>
+
+			<div class="i-pa opacy" data-main="true">
+				<p class="in-e"></p>
+				<p class="in-exp"></p>	
+				<div class="in-r">
+					<label for="resp"></label>
+					<input type="number" id="resp" placeholder="?">
+				</div>
+				<p id="viewWarn" class="error hide">No has escrito algo, ¡Escribe una respuesta!</p>
+			</div>
+
+			<div class="i-oa opacy" data-main="true">
+				<p class="in-eh">Resuelve:</p>
+				<div class="in-r">
+					<label for="resp"></label>
+					<input type="number" id="resp" placeholder="?">
+				</div>
+				<p id="viewWarn" class="error hide">No has escrito algo, ¡Escribe una respuesta!</p>
+			</div>
+
+			<!-- Element for control interface -->
+			<div class="execs">
+				<button id="stop-test" class="stop">Detener Prueba</button>
+				<button id="send-response" class="continue">Contestar</button>
+			</div>
+		</template>
+
+		<footer>
+			<p>© Codevelp - - - 2023</p>
+		</footer>
+		
+		<script type="module" src='interactive.js'></script>
+	</body>
+</html>

@@ -1,0 +1,486 @@
+html,body {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+html::-webkit-scrollbar,
+html::-webkit-scrollbar-button,
+html::-webkit-scrollbar-track,
+html::-webkit-scrollbar-corner,
+html::-webkit-scrollbar-thumb {
+	appearance: none;
+}
+
+html::-webkit-scrollbar {
+	width: 10px;
+	height: auto;
+	background-color: transparent;
+}
+
+html::-webkit-scrollbar-button,
+html::-webkit-scrollbar-corner {
+	display: none;
+}
+
+html::-webkit-scrollbar-thumb {
+	background-image: linear-gradient(blue, orange);
+	border-radius: 1em;
+}
+body {
+	background-color: black;
+	color: white;
+}
+header {
+	background-image: linear-gradient(#0000ff3b, #444);
+	padding: 5px;
+}
+header h1 {
+	margin: 0px;
+	text-align: center;
+	font-size: 2.4em;
+}
+
+main.container {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: auto;
+	grid-auto-flow: row;
+	row-gap: 20px;
+	column-gap: 0px;
+	align-items: stretch;
+	align-content: center;
+	align-items: stretch;
+	justify-items: stretch;
+	justify-content: center;
+	opacity: 1;
+	transition: 400ms opacity linear;
+}
+main.container.hide {
+	opacity: 0;
+}
+article {
+	padding: 5px 0px 4px 0px;
+	border: 2px solid #444;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+article h2 {
+	color: orange;
+	text-shadow: 2px 2px 2px #444;
+	font-size: 2em;
+}
+article p {
+	color: yellow;
+	font-size: 1.5em;
+	text-align: center;
+}
+article div.c-button {
+	display: flex;
+	width: 100%;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+}
+article div.c-button button {
+	background-color: #445;
+	color: white;
+	font-size: 1.3em;
+	border-radius: 1em;
+	padding: 0.2em;
+	cursor: pointer;
+	transition: 400ms all ease;
+}
+
+article div.c-button button:hover {
+	background-color: cyan;
+	color: black;
+}
+
+article div.c-button button.del-account {
+	background-color: red;
+}
+article div.c-button button.del-account:hover {
+	background-color: yellow;
+	color: red;
+}
+article p i {
+	color: cyan;
+}
+article p strong {
+	color: white;
+}
+article form.c-message {
+	width: 100%;
+}
+article form.c-message fieldset {
+	display: flex;
+	border: none;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+}
+article form.c-message fieldset div.text-dialog {
+	background-color: red;
+	padding: 4px;
+	max-width: 80vw;
+	word-wrap: break-word;
+	color: white;
+	font-size: 25px;
+	margin: 0px 0px 7px 0px;
+}
+article form.c-message fieldset div.text-dialog.notVisible {
+	display: none;
+}
+article form.c-message legend {
+	text-align: center;
+	font-size: 2em;
+	text-decoration: underline solid white;
+	color: orange;
+}
+article form.c-message textarea {
+	background-color: #444;
+	font-size: 20px;
+	color: white;
+	min-width: 280px;
+	max-width: 600px;
+	resize: horizontal;
+	height: 300px;
+}
+article form.c-message textarea.sended {
+	font-size: 40px;
+	color: cyan;
+}
+article form.c-message textarea::placeholder {
+	color: yellow;
+}
+article form.c-message button {
+	display: block;
+	font-size: 20px;
+	padding: 3px;
+	cursor: pointer;
+	background-color: orange;
+	transition: 300ms background-color linear;
+	margin: 7px 0px 0px 0px;
+}
+article form.c-message button:hover {
+	background-color: yellow;
+}
+footer {
+	padding: 25px;
+	background-color: #5a00a140;
+	margin: 0px;
+}
+footer p {
+	margin: 0px;
+	text-align: center;
+	color: gray;
+	font-style: italic;
+	font-family: serif;
+	font-size: 30px;
+}
+form.c-interfaceForAccess {
+	background-color: #222;
+	z-index: 5;
+	width: 80vw;
+	position: absolute;
+	top: 55px;
+	left: 10vw;
+	transition: 300ms left ease;
+}
+form.c-interfaceForAccess.hide {
+	left: -80vw;
+}
+
+form.c-interfaceForAccess fieldset {
+	border: none;
+}
+form.c-interfaceForAccess fieldset legend {
+	font-size: 1.5em;
+	color: yellow;
+}
+form.c-interfaceForAccess fieldset div.ms {
+	color: white;
+	font-size: 1.4em;
+	background-color: red;
+	text-align: center;
+	animation-name: opac;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+}
+form.c-interfaceForAccess fieldset div.ms.notVisible {
+	display: none;
+}
+form.c-interfaceForAccess fieldset div.box-password {
+	width: 90%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	padding: 0px 0px 9px 0px;
+	align-items: stretch;
+}
+form.c-interfaceForAccess fieldset div.box-password input {
+	background-color: white;
+	display: block;
+	min-width: 80px;
+	max-width: 400px;
+	width: 75%;
+	flex-basis: auto;
+	font-size: 25px;
+	flex-shrink: 1;
+}
+form.c-interfaceForAccess fieldset div.box-password button.view,
+form.c-interfaceForAccess fieldset div.box-password button.hide {
+	margin: 0px 0px 0px 4px;
+	font-size: 16px;
+	background-color: purple;
+	color: white;
+	cursor: pointer;
+	transition: 300ms all ease;
+}
+form.c-interfaceForAccess fieldset div.box-password button.view:hover,
+form.c-interfaceForAccess fieldset div.box-password button.hide:hover {
+	background-color: white;
+	color: black;
+}
+
+form.c-interfaceForAccess div.buttons {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	padding: 3px 0px 0px 0px;
+}
+form.c-interfaceForAccess div.buttons button {
+	font-size: 1.3em;
+	padding: 4px;
+	cursor: pointer;
+}
+form.c-interfaceForAccess div.buttons button[type="submit"] {
+	background-color: green;
+	color: white;
+	transition: 350ms background-color ease;
+}
+form.c-interfaceForAccess div.buttons button[type="submit"]:hover {
+	background-color: brown;
+}
+form.c-interfaceForAccess div.buttons button[type="button"] {
+	color: white;
+	background-color: blue;
+	transition: 350ms background-color ease;
+}
+form.c-interfaceForAccess div.buttons button[type="button"]:hover {
+	background-color: red;
+}
+@keyframes opac {
+	from { background-color: red; }
+	to { background-color: #ff000014; }
+}
+form.c-interfaceForAccess fieldset div.ms.notVisible {
+	display: none;
+}
+form.edit-data {
+	min-width: max-content;
+	background-color: #222;
+	z-index: 5;
+	width: 90vw;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	transition: 300ms left ease;
+}
+form.edit-data.toLeft {
+	left: -90vw;
+}
+form.edit-data fieldset {
+	width: 100%;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+}
+form.edit-data fieldset legend {
+	text-align: center;
+	font-size: 28px;
+	margin: 0px;
+	padding: 0px;
+}
+form.edit-data fieldset div#dialog2 {
+	font-size: 24px;
+	max-width: 88vw;
+	word-wrap: break-word;
+	background-color: #444;
+	color: orange;
+	padding: 2px 0px 2px 0px;
+	animation-name: equalState;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+}
+@keyframes equalState {
+	from {color: orange;}
+	to { color: orange; }
+}
+form.edit-data fieldset div#dialog2.hide {
+	display: none;
+}
+form.edit-data fieldset label {
+	display: inline-block;
+	text-indent: 5px;
+	padding: 4px 0px 4px 0px;
+	font-size: 24px;
+}
+form.edit-data fieldset input {
+	background-color: white;
+	display: block;
+	font-size: 24px;
+	text-indent: 0.4em;
+	border-radius: 1em;
+	border: none;
+	outline: none;
+	padding: 0px;
+	margin: 0px;
+	transition: 300ms background-color ease;
+}
+form.edit-data fieldset input::placeholder {
+	color: red;
+}
+form.edit-data fieldset input:focus {
+	background-color: #1f0d27;
+	color: white;
+}
+form.edit-data fieldset input[type="text"] {
+	min-width: 240px;
+	max-width: 400px;
+	width: 95%;
+}
+form.edit-data fieldset div.buttons {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+	align-content: center;
+	justify-content: space-around;
+	margin: 30px 0px 0px 0px;
+}
+form.edit-data fieldset div.buttons button {
+	font-size: 24px;
+	cursor: pointer;
+	padding: 5px;
+}
+form.edit-data fieldset div.buttons button[type="submit"] {
+	background-color: green;
+	color: white;
+	transition: 300ms background-color ease;
+}
+form.edit-data fieldset div.buttons button[type="submit"]:hover {
+	background-color: brown;
+}
+form.edit-data fieldset div.buttons button[type="button"] {
+	background-color: brown;
+	color: white;
+	transition: 300ms background-color ease;
+}
+form.edit-data fieldset div.buttons button[type="button"]:hover {
+	background-color: red;
+}
+form.edit-data fieldset div.box-password {
+	width: 95%;
+	padding: 0px;
+	margin: 0px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	paddind: 0px;
+	align-items: stretch;
+}
+
+form.edit-data fieldset div.box-password input[type="password"],
+form.edit-data fieldset div.box-password input[type="text"] {
+	min-width: 200px;
+	max-width: 350px;
+	width: 75%;
+}
+form.edit-data fieldset div.box-password button.view,
+form.edit-data fieldset div.box-password button.hide {
+	margin: 0px 0px 0px 4px;
+	font-size: 16px;
+	background-color: purple;
+	color: white;
+	cursor: pointer;
+	transition: 300ms all ease;
+}
+form.edit-data fieldset div.box-password button.view:hover,
+form.edit-data fieldset div.box-password button.hide:hover {
+	background-color: white;
+	color: black;
+}
+div.c-query {
+	background-color: white;
+	z-index: 5;
+	position: absolute;
+	top: 10px;
+	left: 10vw;
+	width: 80vw;
+	padding: 0px;
+	margin: 0px;
+	border-radius: 1em;
+	transition: 300ms left ease;
+}
+div.c-query.toLeft {
+	left: -80vw;
+}
+div.c-query p {
+	color: black;
+	font-size: 25px;
+	font-weight: lighter;
+	word-wrap: break-word;
+	text-align: center;
+}
+div.c-query div.b-forActions {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	margin: 4px;
+}
+div.c-query div.b-forActions button {
+	font-size: 25px;
+	padding: 5px 15px 5px 15px;
+	cursor: pointer;
+	transition: 300ms background-color ease;
+}
+div.c-query div.b-forActions button#confirm-close {
+	background-color: brown;
+	color: white;
+}
+div.c-query div.b-forActions button#omit {
+	background-color: green;
+	color: white;
+}
+div.c-query div.b-forActions button#omit:hover {
+	background-color: lime;
+}
+div.c-query div.b-forActions button#confirm-close:hover {
+	background-color: red;
+}
+
+svg.home-destination {
+	position: fixed;
+	top: auto;
+	left: auto;
+	bottom: 4px;
+	right: 4px;
+	z-index: 8;
+	cursor: pointer;
+}
+svg.home-destination rect {
+	fill: white;
+	transition: 300ms fill linear;
+}
+svg.home-destination:hover rect {
+	fill: yellow;
+}

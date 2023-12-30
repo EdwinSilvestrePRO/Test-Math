@@ -1,0 +1,413 @@
+@import 'styles-forms.css' all;
+html,body {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+html::-webkit-scrollbar,
+html::-webkit-scrollbar-button,
+html::-webkit-scrollbar-track,
+html::-webkit-scrollbar-corner,
+html::-webkit-scrollbar-thumb {
+	appearance: none;
+}
+
+html::-webkit-scrollbar {
+	width: 10px;
+	height: auto;
+	background-color: transparent;
+}
+
+html::-webkit-scrollbar-button,
+html::-webkit-scrollbar-corner {
+	display: none;
+}
+
+html::-webkit-scrollbar-thumb {
+	background-color: yellow;
+	border-radius: 1em;
+}
+
+body {
+	background-color: black;
+	color: white;
+}
+header {
+	background-color: purple;
+	margin: 0px;
+	padding: 20px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	--color-bar-bottom: red;
+	animation-name: colorAnimend;
+	animation-duration: 8s;
+	animation-timing-function: linear;
+	animation-delay: 3s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	border-bottom-width: 5px;
+	border-bottom-style: solid;
+	border-bottom-color: var(--color-bar-bottom);
+	transition: 400ms border-bottom-color linear;
+}
+
+header h1 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 2em;
+	font-family: serif;
+	text-align: center;
+}
+header h1 a {
+	text-decoration-color: yellow;
+	text-decoration-style: solid;
+	color: white;
+	cursor: pointer;
+	transition: 300ms all ease;
+}
+header h1 a:hover {
+	color: yellow;
+	text-decoration-color: transparent;
+}
+@keyframes colorAnimend {
+	0% {
+		--color-bar-bottom: cyan;
+	}
+	10% {
+		--color-bar-bottom: blue;
+	}
+	20% {
+		--color-bar-bottom: brown;
+	}
+	30% {
+		--color-bar-bottom: yellow;
+	}
+	40% {
+		--color-bar-bottom: white;
+	}
+	50% {
+		--color-bar-bottom: gray;
+	}
+	60% {
+		--color-bar-bottom: green;
+	}
+	70% {
+		--color-bar-bottom: #4e9f00;
+	}
+	80% {
+		--color-bar-bottom: #9f71ff;
+	}
+	90% {
+		--color-bar-bottom: #8fff24;
+	}
+	100% {
+		--color-bar-bottom: #ff0061;
+	}
+}
+main {
+	z-index: 1;
+	background-color: #5a00a140;
+	padding: 10px;
+	opacity: 1;
+	transition: 600ms opacity linear;
+}
+main.hidden {
+	opacity: 0;
+}
+main article {
+	padding: 10px;
+	background-color: inherit;
+}
+
+main article h2 {
+	background-color: none;
+	font-size: 2.4em;
+	font-family: serif;
+	text-align: center;
+}
+main article h2 i.down {
+	color: red;
+}
+main article h2 i.media {
+	color: yellow;
+}
+
+main article h2 i.good {
+	color: green;
+}
+
+main article h2 i.veryGood {
+	color: #31ff00;
+}
+
+main article div.buttons {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+}
+main article div.buttons button {
+	background-color: #ff0061;
+	border-radius: 1em;
+	color: white;
+	font-family: serif;
+	font-size: 35px;
+	margin-top: 20px;
+	width: 265px;
+	cursor: pointer;
+}
+main article div.buttons button.special {
+	background-image: linear-gradient(45deg, black 200px, white);
+	transition: 400ms background-image ease;
+}
+main article div.buttons button.special:hover {
+	background-image: linear-gradient(45deg, black 20px, white);
+}
+main article div.buttons button:disabled {
+	background-color: gray;
+	cursor: default;
+}
+footer {
+	padding: 25px;
+	background-color: #5a00a140;
+	margin: 0px;
+}
+footer p {
+	margin: 0px;
+	text-align: center;
+	color: gray;
+	font-style: italic;
+	font-family: serif;
+	font-size: 30px;
+}
+
+section#r-test {
+	z-index: 6;
+	background-color: black;
+	position: fixed;
+	overflow: hidden;
+	width: auto;
+	height: auto;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	margin: 0px;
+	padding: 0px;
+	display: grid;
+	grid-template-rows: 60px 1fr minmax(80px, 100px);
+	grid-template-columns: auto;
+	grid-auto-flow: row;
+	align-items: stretch;
+	justify-items: stretch;
+	justify-content: stretch;
+	align-content: stretch;
+	transform: translateY(0px);
+	transition: 400ms transform ease;
+}
+
+section#r-test.down {
+	transform: translateY(100vh);
+}
+
+section#r-test h3 {
+	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+	font-size: 35px;
+	margin: 0px;
+	text-align: center;
+	color: yellow;
+	align-self: center;
+}
+section#r-test h3 i {
+	color: cyan;
+}
+section#r-test h3 i.correct {
+	color: green;
+}
+section#r-test h3 i.not-correct {
+	color: red;
+}
+section#r-test div {
+	opacity: 1;
+	transition: 300ms opacity ease;
+}
+section#r-test div.opacy {
+	opacity: 0;
+}
+section#r-test div.i-epr {
+	grid-row: 2 / 3;
+	grid-column: 1 / 2;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+section#r-test div[data-main="true"]::-webkit-scrollbar,
+section#r-test div[data-main="true"]::-webkit-scrollbar-track,
+section#r-test div[data-main="true"]::-webkit-scrollbar-corner,
+section#r-test div[data-main="true"]::-webkit-scrollbar-thumb,
+section#r-test div[data-main="true"]::-webkit-scrollbar-button {
+	appearance: none;
+}
+section#r-test div[data-main="true"]::-webkit-scrollbar-corner,
+section#r-test div[data-main="true"]::-webkit-scrollbar-button {
+	display: none;
+}
+section#r-test div[data-main="true"]::-webkit-scrollbar-thumb {
+	background-color: #ff0061;
+	width: 10px;
+	border-radius: 1em;
+}
+section#r-test div[data-main="true"]::-webkit-scrollbar-track,
+section#r-test div[data-main="true"]::-webkit-scrollbar {
+	width: 10px;
+	height: auto;
+}
+section#r-test div[data-main="true"] p.error {
+	background-color: red;
+	font-size: 26px;
+	color: white;
+	text-align: center;
+	word-wrap: break-word;
+	padding: 0px 5px 0px 5px;
+}
+section#r-test div[data-main="true"] p.error.hide {
+	display: none;
+}
+section#r-test div.i-epr p.in-e {
+	background-color: #2400244d;
+	font-size: 26px;
+	word-wrap: break-word;
+	padding: 5px;
+	margin: 0px;
+	font-family: serif;
+}
+section#r-test div.i-epr p.in-p {
+	text-align: center;
+	margin: 0px;
+	color: cyan;
+	font-size: 30px;
+	font-weight: bolder;
+	padding: 16px 0px 16px 0px;
+}
+section#r-test div.i-epr div.in-r {
+	text-align: center;
+}
+section#r-test div.i-epr div.in-r label {
+	font-size: 26px;
+	padding: 4px;
+}
+section#r-test div[data-main="true"] div.in-r input {
+	text-align: center;
+	font-size: 26px;
+	width: 100px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: yellow;
+	border-bottom: 2px solid brown;
+	transition: 300ms border-color ease;
+}
+section#r-test div[data-main="true"] div.in-r input::placeholder {
+	color: purple;
+}
+section#r-test div[data-main="true"] div.in-r input:focus {
+	border-color: white;
+}
+section#r-test div.i-epr p.error {
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	background-color: red;
+	font-size: 25px;
+}
+section#r-test div.i-epr p.error.hide {
+	display: none;
+}
+section#r-test div.execs {
+	grid-row: 3 / 4;
+	grid-column: 1 / 2;
+	background-color: #1c003d4a;
+	align-self: end;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}
+
+section#r-test div.execs button {
+	font-size: 26px;
+	color: white;
+	border-radius: 1em;
+	cursor: pointer;
+	padding: 5px;
+}
+section#r-test div.execs button.stop {
+	background-color: darkred;
+}
+section#r-test div.execs button.stop:hover {
+	background-color: red;
+}
+section#r-test div.execs button.continue {
+	background-color: darkgreen;
+}
+section#r-test div.execs button.continue:hover {
+	background-color: green;
+}
+section#r-test div.i-oa p.in-eh {
+	color: orange;
+	font-size: 26px;
+	padding: 5px;
+	margin: 0px;
+	font-family: serif;
+}
+section#r-test div.i-oa div.in-r {
+	text-align: center;
+}
+section#r-test div.i-oa div.in-r label {
+	font-size: 26px;
+	color: rgb(244, 153, 230);
+}
+section#r-test div.i-pa p.in-e {
+	text-indent: 4px;
+	font-size: 26px;
+	color: #ff0061;
+}
+section#r-test div.i-pa p.in-exp {
+	text-align: center;
+	font-size: 26px;
+	color: orange;
+}
+section#r-test div.i-pa div.in-r {
+	text-align: center;
+}
+section#r-test div.i-pa div.in-r label {
+	color: yellow;
+	font-size: 25px;
+}
+section#r-test div.i-cr p.in-e {
+	color: white;
+	text-indent: 8px;
+	font-size: 26px;
+	margin: 0px;
+	font-family: serif;
+}
+section#r-test div.i-cr p.in-exp {
+	background-color: #fe009867;
+	letter-spacing: 3px;
+	width: 85vw;
+	padding: 4px 2px 4px 2px;
+	word-wrap: break-word;
+	font-size: 26px;
+	margin: 0px auto;
+	font-family: serif;
+}
+section#r-test div.i-cr div.in-r {
+	text-align: center;
+}
+section#r-test div.i-cr div.in-r label {
+	color: yellow;
+	font-size: 26px;
+	font-family: serif;
+}
